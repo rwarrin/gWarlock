@@ -31,7 +31,24 @@ local function OnEvent(self, event, ...)
 		end
 	end
 	
+	if(event == "UNIT_HEALTH") then
+		if(EnemyHealthWarned == false and UnitIsEnemy("player", "target")) then
+			if(UnitIsDead("target") == nil) then
+				if(UnitLevel("target") >= UnitLevel("player") - 4) then
+					if(((UnitHealth("target") / UnitHealthMax("target")) * 100) <= VALUE_HEALTHPERCENT) then
+						PlaySoundFile(SOUND_ALERT_HEALTHWARNING);
+						DEFAULT_CHAT_FRAME:AddMessage(MESSAGE_ALERT_HEALTHWARNING, unpack(COLOR_CHAT_MESSAGE));
+						RaidNotice_AddMessage(RaidWarningFrame, MESSAGE_ALERT_HEALTHWARNING, COLOR_RAID_MESSAGE);
+						EnemyHealthWarned = true;
+					end
+				end
+			end
+		end
+	end
 	
+	if(event == "PLAYER_TARGET_CHANGED") then
+		EnemyHealthWarned = false;
+	end
 	
 end
 
@@ -39,6 +56,7 @@ end
 gWarlock = CreateFrame("Frame", "gWarlock", nil);
 gWarlock:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED");
 gWarlock:RegisterEvent("UNIT_HEALTH");
+gWarlock:RegisterEvent("PLAYER_TARGET_CHANGED");
 gWarlock:SetScript("OnEvent", OnEvent);
 
 
