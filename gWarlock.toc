@@ -1,0 +1,7 @@
+## Interface: 40300
+## Title: gWarlock
+## Author: Gost
+## Notes: Alerts you to when your target is below 25% hp and when Drain Soul ticks.
+## Version: 0.0.1
+
+core.lua
