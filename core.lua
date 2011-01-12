@@ -37,7 +37,7 @@ local function OnEvent(self, event, ...)
 	if(event == "UNIT_HEALTH") then
 		if(EnemyHealthWarned == false and UnitIsEnemy("player", "target")) then
 			if(UnitIsDead("target") == nil) then
-				if(UnitLevel("target") >= (UnitLevel("player") - 4)) then
+				if(UnitLevel("target") >= (UnitLevel("player") - 5)) then
 					if(((UnitHealth("target") / UnitHealthMax("target")) * 100) <= VALUE_HEALTHPERCENT) then
 						PlaySoundFile(SOUND_ALERT_HEALTHWARNING);
 						if(OUTPUT_CHATMESSAGE_FRAME == true) then DEFAULT_CHAT_FRAME:AddMessage(MESSAGE_ALERT_HEALTHWARNING, unpack(COLOR_CHAT_MESSAGE)); end
