@@ -20,7 +20,7 @@ local EnemyHealthWarned = false;
 
 local function OnEvent(self, event, ...)
 	if(event == "COMBAT_LOG_EVENT_UNFILTERED") then
-		local timeStamp, eventType, sourceGUID, sourceName, sourceFlags, destGUID, destName, destFlags, spellID, spellName, spellSchool, amount, overkill = ...;
+		local timeStamp, eventType, hideCaster, sourceGUID, sourceName, sourceFlags, destGUID, destName, destFlags, spellID, spellName, spellSchool, amount, overkill = ...;
 		
 		if(sourceName == UnitName("player")) then
 			if(eventType == "SPELL_PERIODIC_DAMAGE") then
