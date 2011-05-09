@@ -9,7 +9,7 @@ local MESSAGE_ALERT_HEALTHWARNING = ">>> TARGET HEALTH IS BELOW ".. VALUE_HEALTH
 local MESSAGE_ALERT_DRAINSOULTICK = ">>> Drain Soul  (%d) <<<";
 
 local COLOR_CHAT_MESSAGE = {186/255, 149/255, 222/255}; --  Defaults: {186/255, 149/255, 222/255};
-local COLOR_RAID_MESSAGE = {r = 186/255, g = 149/255, b = 222/255}; --  Defualts{r = 186/255, g = 149/255, b = 222/255};
+local COLOR_RAID_MESSAGE = {r = 186/255, g = 149/255, b = 222/255}; --  Defaults{r = 186/255, g = 149/255, b = 222/255};
 
 local SOUND_ALERT_HEALTHWARNING = "Interface\\AddOns\\gWarlock\\Media\\warn.mp3";
 local SOUND_ALERT_DRAINSOULTICK = "Interface\\AddOns\\gWarlock\\Media\\tick.mp3";
